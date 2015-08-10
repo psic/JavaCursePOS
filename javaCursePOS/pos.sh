@@ -1,0 +1,3 @@
+export LD_LIBRARY_PATH=/home/psic/javaprojects/javaCursePOS/pub/lib/charva/c/lib/:$LD_LIBRARY_PATH
+java -Dcharva.color=1 -cp "/home/psic/javaprojects/javaCursePOS/pub/lib/charva/java/dist/lib/charva.jar:/home/psic/javaprojects/javaCursePOS/pub/lib/jdom-2.0.6/jdom-2.0.6.jar:/home/psic/javaprojects/javaCursePOS/pub/javaCursePOS.jar:/home/psic/javaprojects/javaCursePOS/pub/lib/charva/java/lib/commons-logging-api.jar:/home/psic/javaprojects/javaCursePOS/pub/lib/charva/java/lib/commons-logging.jar:/home/psic/javaprojects/javaCursePOS/pub/lib/charva/java/lib/log4j-1.2.8.jar/log4j-1.2.8.jar:/home/psic/javaprojects/javaCursePOS/pub/lib/commons-lang.jar" fr.web_en_royans.lebarajus.POS.Engine 2> $HOME/pos.log
+echo Fini

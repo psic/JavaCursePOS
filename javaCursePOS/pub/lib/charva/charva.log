@@ -1,0 +1,114 @@
+2015-05-21 11:12:22,783 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=File ev:FocusEvent: source=[JMenu: text=File] id=FOCUS_GAINED temp=false opposite=[NULL]
+2015-05-21 11:12:22,793 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:12:24,765 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=File ev:FocusEvent: source=[JMenu: text=File] id=FOCUS_LOST temp=false opposite=[JMenu: text=Layouts]
+2015-05-21 11:12:24,767 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=Layouts ev:FocusEvent: source=[JMenu: text=Layouts] id=FOCUS_GAINED temp=false opposite=[JMenu: text=File]
+2015-05-21 11:12:24,775 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:25,184 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=Layouts ev:FocusEvent: source=[JMenu: text=Layouts] id=FOCUS_LOST temp=false opposite=[JMenu: text=Containers]
+2015-05-21 11:12:25,185 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=Containers ev:FocusEvent: source=[JMenu: text=Containers] id=FOCUS_GAINED temp=false opposite=[JMenu: text=Layouts]
+2015-05-21 11:12:25,193 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:26,886 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=Containers ev:FocusEvent: source=[JMenu: text=Containers] id=FOCUS_LOST temp=true opposite=[JMenuItem: text=JTabbedPane]
+2015-05-21 11:12:26,888 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=JTabbedPane ev:FocusEvent: source=[JMenuItem: text=JTabbedPane] id=FOCUS_GAINED temp=true opposite=[JMenu: text=Containers]
+2015-05-21 11:12:26,889 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:12:27,401 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=JTabbedPane ev:FocusEvent: source=[JMenuItem: text=JTabbedPane] id=FOCUS_LOST temp=false opposite=[JMenu: text=JOptionPane...]
+2015-05-21 11:12:27,403 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=JOptionPane... ev:FocusEvent: source=[JMenu: text=JOptionPane...] id=FOCUS_GAINED temp=false opposite=[JMenuItem: text=JTabbedPane]
+2015-05-21 11:12:27,405 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:27,953 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=JOptionPane... ev:FocusEvent: source=[JMenu: text=JOptionPane...] id=FOCUS_LOST temp=true opposite=[JMenuItem: text=showMessageDialog]
+2015-05-21 11:12:27,955 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=showMessageDialog ev:FocusEvent: source=[JMenuItem: text=showMessageDialog] id=FOCUS_GAINED temp=true opposite=[JMenu: text=JOptionPane...]
+2015-05-21 11:12:27,957 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:12:28,662 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=showMessageDialog ev:FocusEvent: source=[JMenuItem: text=showMessageDialog] id=FOCUS_LOST temp=false opposite=[JMenuItem: text=showConfirmDialog]
+2015-05-21 11:12:28,664 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=showConfirmDialog ev:FocusEvent: source=[JMenuItem: text=showConfirmDialog] id=FOCUS_GAINED temp=false opposite=[JMenuItem: text=showMessageDialog]
+2015-05-21 11:12:28,666 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:29,372 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=showConfirmDialog ev:FocusEvent: source=[JMenuItem: text=showConfirmDialog] id=FOCUS_LOST temp=true opposite=[JButton location=(11,0) label="Yes" actionCommand="Yes"]
+2015-05-21 11:12:29,373 DEBUG (Component.java:338) - processFocusEvent:JButton location=(11,0) label="Yes" actionCommand="Yes" ev:FocusEvent: source=[JButton location=(11,0) label="Yes" actionCommand="Yes"] id=FOCUS_GAINED temp=true opposite=[JMenuItem: text=showConfirmDialog]
+2015-05-21 11:12:29,376 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:12:29,478 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:32,265 DEBUG (Component.java:338) - processFocusEvent:JButton location=(11,0) label="Yes" actionCommand="Yes" ev:FocusEvent: source=[JButton location=(11,0) label="Yes" actionCommand="Yes"] id=FOCUS_LOST temp=true opposite=[JButton location=(12,0) label="OK" actionCommand="OK"]
+2015-05-21 11:12:32,266 DEBUG (Component.java:338) - processFocusEvent:JButton location=(12,0) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(12,0) label="OK" actionCommand="OK"] id=FOCUS_GAINED temp=true opposite=[JButton location=(11,0) label="Yes" actionCommand="Yes"]
+2015-05-21 11:12:32,267 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:12:33,156 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:33,257 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:33,808 DEBUG (Component.java:338) - processFocusEvent:JButton location=(12,0) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(12,0) label="OK" actionCommand="OK"] id=FOCUS_LOST temp=true opposite=[JMenu: text=Widgets]
+2015-05-21 11:12:33,809 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=Widgets ev:FocusEvent: source=[JMenu: text=Widgets] id=FOCUS_GAINED temp=true opposite=[JButton location=(12,0) label="OK" actionCommand="OK"]
+2015-05-21 11:12:33,816 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:34,657 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=Widgets ev:FocusEvent: source=[JMenu: text=Widgets] id=FOCUS_LOST temp=true opposite=[JMenuItem: text=Text components]
+2015-05-21 11:12:34,659 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=Text components ev:FocusEvent: source=[JMenuItem: text=Text components] id=FOCUS_GAINED temp=true opposite=[JMenu: text=Widgets]
+2015-05-21 11:12:34,660 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:12:35,499 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=Text components ev:FocusEvent: source=[JMenuItem: text=Text components] id=FOCUS_LOST temp=true opposite=[JCheckBox location=(0,0) label="Enabled" actionCommand="null" selected=true]
+2015-05-21 11:12:35,501 DEBUG (Component.java:338) - processFocusEvent:JCheckBox location=(0,0) label="Enabled" actionCommand="null" selected=true ev:FocusEvent: source=[JCheckBox location=(0,0) label="Enabled" actionCommand="null" selected=true] id=FOCUS_GAINED temp=true opposite=[JMenuItem: text=Text components]
+2015-05-21 11:12:35,509 DEBUG (EventQueue.java:141) - Coalescing 4 SyncEvents on queue
+2015-05-21 11:12:35,610 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:36,434 DEBUG (EventQueue.java:141) - Coalescing 4 SyncEvents on queue
+2015-05-21 11:12:36,970 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:37,308 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:37,611 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:38,992 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:38,993 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:39,319 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:40,048 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:41,619 DEBUG (Component.java:338) - processFocusEvent:JCheckBox location=(0,0) label="Enabled" actionCommand="null" selected=false ev:FocusEvent: source=[JCheckBox location=(0,0) label="Enabled" actionCommand="null" selected=false] id=FOCUS_LOST temp=false opposite=[JButton location=(25,0) label="OK" actionCommand="OK"]
+2015-05-21 11:12:41,621 DEBUG (Component.java:338) - processFocusEvent:JButton location=(25,0) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(25,0) label="OK" actionCommand="OK"] id=FOCUS_GAINED temp=false opposite=[JCheckBox location=(0,0) label="Enabled" actionCommand="null" selected=false]
+2015-05-21 11:12:41,624 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:41,931 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:43,609 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:44,249 DEBUG (Component.java:338) - processFocusEvent:JButton location=(25,0) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(25,0) label="OK" actionCommand="OK"] id=FOCUS_LOST temp=true opposite=[JMenuItem: text=Selection components]
+2015-05-21 11:12:44,250 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=Selection components ev:FocusEvent: source=[JMenuItem: text=Selection components] id=FOCUS_GAINED temp=true opposite=[JButton location=(25,0) label="OK" actionCommand="OK"]
+2015-05-21 11:12:44,251 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:44,611 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=Selection components ev:FocusEvent: source=[JMenuItem: text=Selection components] id=FOCUS_LOST temp=true opposite=[JComboBox location=(20,2) selectedItem="Red"]
+2015-05-21 11:12:44,612 DEBUG (Component.java:338) - processFocusEvent:JComboBox location=(20,2) selectedItem="Red" ev:FocusEvent: source=[JComboBox location=(20,2) selectedItem="Red"] id=FOCUS_GAINED temp=true opposite=[JMenuItem: text=Selection components]
+2015-05-21 11:12:44,619 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:12:44,721 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:45,487 DEBUG (Component.java:338) - processFocusEvent:JComboBox location=(20,2) selectedItem="Red" ev:FocusEvent: source=[JComboBox location=(20,2) selectedItem="Red"] id=FOCUS_LOST temp=false opposite=[JButton location=(23,0) label="OK" actionCommand="OK"]
+2015-05-21 11:12:45,488 DEBUG (Component.java:338) - processFocusEvent:JButton location=(23,0) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(23,0) label="OK" actionCommand="OK"] id=FOCUS_GAINED temp=false opposite=[JComboBox location=(20,2) selectedItem="Red"]
+2015-05-21 11:12:45,494 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:45,739 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:46,822 DEBUG (Component.java:338) - processFocusEvent:JButton location=(23,0) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(23,0) label="OK" actionCommand="OK"] id=FOCUS_LOST temp=true opposite=[JMenu: text=Layouts]
+2015-05-21 11:12:46,823 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=Layouts ev:FocusEvent: source=[JMenu: text=Layouts] id=FOCUS_GAINED temp=true opposite=[JButton location=(23,0) label="OK" actionCommand="OK"]
+2015-05-21 11:12:46,831 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:47,121 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=Layouts ev:FocusEvent: source=[JMenu: text=Layouts] id=FOCUS_LOST temp=true opposite=[JMenuItem: text=Null Layout]
+2015-05-21 11:12:47,122 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=Null Layout ev:FocusEvent: source=[JMenuItem: text=Null Layout] id=FOCUS_GAINED temp=true opposite=[JMenu: text=Layouts]
+2015-05-21 11:12:47,124 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:12:48,188 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=Null Layout ev:FocusEvent: source=[JMenuItem: text=Null Layout] id=FOCUS_LOST temp=false opposite=[JMenuItem: text=Miscellaneous Layouts]
+2015-05-21 11:12:48,189 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=Miscellaneous Layouts ev:FocusEvent: source=[JMenuItem: text=Miscellaneous Layouts] id=FOCUS_GAINED temp=false opposite=[JMenuItem: text=Null Layout]
+2015-05-21 11:12:48,191 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:48,464 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=Miscellaneous Layouts ev:FocusEvent: source=[JMenuItem: text=Miscellaneous Layouts] id=FOCUS_LOST temp=true opposite=[JTextField location=(1,2) text="JTextField #1." actionCommand=""]
+2015-05-21 11:12:48,465 DEBUG (Component.java:338) - processFocusEvent:JTextField location=(1,2) text="JTextField #1." actionCommand="" ev:FocusEvent: source=[JTextField location=(1,2) text="JTextField #1." actionCommand=""] id=FOCUS_GAINED temp=true opposite=[JMenuItem: text=Miscellaneous Layouts]
+2015-05-21 11:12:48,469 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:12:48,570 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:12:53,216 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:06,769 DEBUG (Component.java:338) - processFocusEvent:JTextField location=(1,2) text="JTextField #1." actionCommand="" ev:FocusEvent: source=[JTextField location=(1,2) text="JTextField #1." actionCommand=""] id=FOCUS_LOST temp=false opposite=[JButton location=(38,1) label="OK" actionCommand="OK"]
+2015-05-21 11:13:06,770 DEBUG (Component.java:338) - processFocusEvent:JButton location=(38,1) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(38,1) label="OK" actionCommand="OK"] id=FOCUS_GAINED temp=false opposite=[JTextField location=(1,2) text="JTextField #1." actionCommand=""]
+2015-05-21 11:13:06,774 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:08,081 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:09,464 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:10,560 DEBUG (Component.java:338) - processFocusEvent:JButton location=(38,1) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(38,1) label="OK" actionCommand="OK"] id=FOCUS_LOST temp=true opposite=[JMenuItem: text=Layouts in Color]
+2015-05-21 11:13:10,561 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=Layouts in Color ev:FocusEvent: source=[JMenuItem: text=Layouts in Color] id=FOCUS_GAINED temp=true opposite=[JButton location=(38,1) label="OK" actionCommand="OK"]
+2015-05-21 11:13:10,562 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:10,883 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=Layouts in Color ev:FocusEvent: source=[JMenuItem: text=Layouts in Color] id=FOCUS_LOST temp=true opposite=[JRadioButton location=(12,1) label="A JRadioButton...  " actionCommand="null" selected=true]
+2015-05-21 11:13:10,884 DEBUG (Component.java:338) - processFocusEvent:JRadioButton location=(12,1) label="A JRadioButton...  " actionCommand="null" selected=true ev:FocusEvent: source=[JRadioButton location=(12,1) label="A JRadioButton...  " actionCommand="null" selected=true] id=FOCUS_GAINED temp=true opposite=[JMenuItem: text=Layouts in Color]
+2015-05-21 11:13:10,888 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:13:10,989 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:12,891 DEBUG (Component.java:338) - processFocusEvent:JRadioButton location=(12,1) label="A JRadioButton...  " actionCommand="null" selected=true ev:FocusEvent: source=[JRadioButton location=(12,1) label="A JRadioButton...  " actionCommand="null" selected=true] id=FOCUS_LOST temp=false opposite=[JButton location=(50,1) label="OK" actionCommand="OK"]
+2015-05-21 11:13:12,892 DEBUG (Component.java:338) - processFocusEvent:JButton location=(50,1) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(50,1) label="OK" actionCommand="OK"] id=FOCUS_GAINED temp=false opposite=[JRadioButton location=(12,1) label="A JRadioButton...  " actionCommand="null" selected=true]
+2015-05-21 11:13:12,896 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:13,159 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:14,135 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:15,166 DEBUG (Component.java:338) - processFocusEvent:JButton location=(50,1) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(50,1) label="OK" actionCommand="OK"] id=FOCUS_LOST temp=true opposite=[JMenuItem: text=GridBagLayout]
+2015-05-21 11:13:15,167 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=GridBagLayout ev:FocusEvent: source=[JMenuItem: text=GridBagLayout] id=FOCUS_GAINED temp=true opposite=[JButton location=(50,1) label="OK" actionCommand="OK"]
+2015-05-21 11:13:15,168 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:15,461 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=GridBagLayout ev:FocusEvent: source=[JMenuItem: text=GridBagLayout] id=FOCUS_LOST temp=true opposite=[JTextField location=(16,0) text="" actionCommand=""]
+2015-05-21 11:13:15,462 DEBUG (Component.java:338) - processFocusEvent:JTextField location=(16,0) text="" actionCommand="" ev:FocusEvent: source=[JTextField location=(16,0) text="" actionCommand=""] id=FOCUS_GAINED temp=true opposite=[JMenuItem: text=GridBagLayout]
+2015-05-21 11:13:15,464 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:13:15,566 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:16,518 DEBUG (Component.java:338) - processFocusEvent:JTextField location=(16,0) text="" actionCommand="" ev:FocusEvent: source=[JTextField location=(16,0) text="" actionCommand=""] id=FOCUS_LOST temp=false opposite=[JButton location=(26,0) label="OK" actionCommand="OK"]
+2015-05-21 11:13:16,519 DEBUG (Component.java:338) - processFocusEvent:JButton location=(26,0) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(26,0) label="OK" actionCommand="OK"] id=FOCUS_GAINED temp=false opposite=[JTextField location=(16,0) text="" actionCommand=""]
+2015-05-21 11:13:16,522 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:16,753 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:17,507 DEBUG (Component.java:338) - processFocusEvent:JButton location=(26,0) label="OK" actionCommand="OK" ev:FocusEvent: source=[JButton location=(26,0) label="OK" actionCommand="OK"] id=FOCUS_LOST temp=true opposite=[JMenu: text=File]
+2015-05-21 11:13:17,507 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=File ev:FocusEvent: source=[JMenu: text=File] id=FOCUS_GAINED temp=true opposite=[JButton location=(26,0) label="OK" actionCommand="OK"]
+2015-05-21 11:13:17,510 DEBUG (EventQueue.java:143) - 1 SyncEvent
+2015-05-21 11:13:17,828 DEBUG (Component.java:338) - processFocusEvent:JMenu: text=File ev:FocusEvent: source=[JMenu: text=File] id=FOCUS_LOST temp=true opposite=[JMenuItem: text=JFileChooser]
+2015-05-21 11:13:17,829 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=JFileChooser ev:FocusEvent: source=[JMenuItem: text=JFileChooser] id=FOCUS_GAINED temp=true opposite=[JMenu: text=File]
+2015-05-21 11:13:17,829 DEBUG (EventQueue.java:141) - Coalescing 2 SyncEvents on queue
+2015-05-21 11:13:20,012 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=JFileChooser ev:FocusEvent: source=[JMenuItem: text=JFileChooser] id=FOCUS_LOST temp=false opposite=[JMenuItem: text=Exit]
+2015-05-21 11:13:20,013 DEBUG (Component.java:338) - processFocusEvent:JMenuItem: text=Exit ev:FocusEvent: source=[JMenuItem: text=Exit] id=FOCUS_GAINED temp=false opposite=[JMenuItem: text=JFileChooser]
+2015-05-21 11:13:20,014 DEBUG (EventQueue.java:143) - 1 SyncEvent

@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<project name="javacursesPOS" basedir="." default="dist">
+	<description>
+        Build the javacursesPOS
+    </description>
+	
+	<!-- override the defaults bellow (not versioned), 
+	     see sample.properties for sample values-->
+	<property file="build.properties"/>
+
+	<!-- override some lib if needed for development/test (not versioned) -->
+	<property file="lib.properties"/>
+	
+	<!-- variables to use in Manifest -->
+	<property name="version" value="1.0"/>
+	<property name="company" value="toto"/>
+	
+	<!-- 'default' global properties, use build.properties for overiding this
+	       as an ant property couln't be redefined once set  -->
+	
+	<property name="src" location="src"/>
+	<property name="build" location="target"/>
+	<property name="dist"  location="dist"/>
+	<property name="lib" location="lib"/>
+	<property name="bin" location="bin"/>
+	
+
+	<property name="jarname" value="javacursesPOS"/>
+	<property name="warname" value="javacursesPOS"/>
+		
+	
+    <!-- ****************************************************************** -->
+    <!-- intialises everything                                                                      -->
+    <!-- ****************************************************************** -->        	
+  	<target name="init">
+    	<!-- Create the build directory structure used by compile -->
+    	<mkdir dir="${dist}"/>
+        <!-- for those whose still compile into the bin directory 
+             where they have both deliverable scripts file and class directory -->
+    	<mkdir dir="${build}"/>
+    	<mkdir dir="${build}/classes"/>
+  		<mkdir dir="${build}/test-classes" />
+    </target>
+	
+
+    	
+  
+  	<!-- ****************************************************************** -->
+  	<!-- compiles everything                                                                                                -->
+  	<!-- ****************************************************************** -->      	
+  	<target name="compile" depends="init" >
+    	<echo message="Compile sources ..."/>
+  		
+    	<javac destdir="${build}/classes" debug="on" encoding="UTF-8">
+    	    <src path="${src}"/>
+      		<classpath>
+      			<fileset dir="${lib}" />
+      		</classpath>
+    	</javac>
+  		
+	   
+  	</target>
+
+	
+  	<!-- ****************************************************************** -->
+  	<!-- create the distribution jars and war files                                        -->
+  	<!-- ****************************************************************** -->       	
+  	<target name="dist" depends="compile" description="generate the distribution" >
+		<!-- clean the distrib directory-->
+		<delete dir="${dist}"/>
+    	<!-- Create the distribution directories -->
+    	<mkdir dir="${dist}"/>
+  		<mkdir dir="${dist}/bin"/>
+  		<!--<mkdir dir="${dist}/classes"/> -->
+		<mkdir dir="${dist}/lib"/>
+  		<mkdir dir="${dist}/resources" />
+  		<mkdir dir="${dist}/doc" />
+  		<mkdir dir="${dist}/samples" />
+  		<mkdir dir="${dist}/schemas" />
+  		
+    	<!-- Create the time stamp -->
+    	<tstamp/>
+    	<!-- Copy all needed files -->
+
+  		<copy todir="${dist}/lib">
+  			<fileset dir="${lib}" />
+    	</copy>
+  	  	<copy todir="${dist}/bin">
+  	  		<fileset dir="${bin}" />
+  	    </copy>  		
+
+		<!-- Put everything in ${build} into the ${jarname}.jar file -->
+    	<jar jarfile="${dist}/${jarname}.jar">
+        	<!-- Generate the MANIFEST.MF file. -->       
+    		<manifest>           
+    			<attribute name="Built-By" value="${company}" />           
+    			<attribute name="Release-Version" value="${version}" /> 
+    			<attribute name="Main-Class" value="fr.web_en_royans.lebarajus.POS.Engine"/>
+    			<!-- <attribute name="Class-Path" value="jcurses.jar"/>-->
+        	</manifest>
+			<fileset dir="${build}/classes" excludes="test-classes"/>
+    		<fileset dir="${lib}" includes="**" />
+    	</jar>
+  		
+  		<tar destfile="${ant.project.name}.tar.gz" compression="gzip" longfile="gnu">
+  		  <tarfileset dir="${dist}" includes="**" prefix="dist"/>
+  		</tar>
+  		
+  	</target>
+  
+  	<!-- ****************************************************************** -->
+  	<!-- clean all assets to start fresh                                                         -->
+  	<!-- ****************************************************************** -->   	
+  	<target name="clean" description="clean up" >
+  		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}/classes/"/>
+  		<delete dir="${build}/test-classes/"/>
+		<delete dir="${dist}"/>
+	</target>
+	
+	
+	<!-- ****************************************************************** -->
+	<!-- install does everything but install                                                  -->
+	<!-- ****************************************************************** --> 	
+	<target name="install" depends="clean,init, compile, dist" description="rebuild all">
+	</target>
+  
+</project>
