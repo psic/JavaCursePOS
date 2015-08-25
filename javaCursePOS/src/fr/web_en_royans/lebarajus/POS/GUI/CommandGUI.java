@@ -42,13 +42,13 @@ public class CommandGUI extends JPanel{
         command.addKeyListener(new KeyListener() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
-				if (arg0 == KeyEvent.VK_ENTER){
+				if (arg0.getKeyCode() == KeyEvent.VK_ENTER){
 				  gui.getEngine().validateCommand();
 
 				   arg0.consume();
 				}
 				else{
-				   		if (arg0 == KeyEvent.VK_DELETE){
+				   		if (arg0.getKeyCode() == KeyEvent.VK_DELETE){
 
 
 				   		}

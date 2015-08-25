@@ -102,7 +102,7 @@ public class ShortcutListGUI extends JPanel{
 			JLabel key = new JLabel(prefix+"\t└──"+item.getDesc() + " " + item.getKey());
 			shortcutLabelList.add(key);
 			add(key);
-			if(item.hasPrice()){
+			if(item.hasPrice() && !item.hasChild() ){
 				for(Price price:item.getPrice()){
 					JLabel priceLabel = new JLabel(prefix+"\t└── " + price.getDesc()+ " " + price.getKey() + " : " + price.getPrice());
 					shortcutLabelList.add(priceLabel);
