@@ -82,33 +82,44 @@ public class ShortcutListGUI extends JPanel{
 			parentList.add(parent);
 			parent = parent.getParent();
 		}
-		int k=0;
 		String prefix="";
+		boolean prems=false;
 		for (int i = parentList.size();i>0;i--){
 			if(parentList.get(i-1).getDesc()!=null){
-				k=0;
-				for(int j=parentList.size();j-i>0;j--){
+			   	JLabel parentLabel;
+			   if(i == parentList.size()-1){
+			   	 parentLabel = new JLabel( parentList.get(i-1).getDesc());
+			   	 prems=true;
+			   }
+			   else{
+		      	 if(i != parentList.size()-2){
 					prefix+="\t";
-					k++;
-				}
+					prems=true;
+		      	 }
+		      	 prems=false;
 //				prefix += "└── ";
-				JLabel parentLabel = new JLabel(prefix+ "└── " + parentList.get(i-1).getDesc());
+				 parentLabel = new JLabel(prefix+ "└── " + parentList.get(i-1).getDesc());
+			   }
 				add (parentLabel);
-			}
+				if(parentList.get(i-1).hasPrice() && !parentList.get(i-1).hasChild() ){
+					for(Price price:parentList.get(i-1).getPrice()){
+						JLabel priceLabel = new JLabel(prefix+"\t└── " + price.getDesc()+ " " + price.getKey() + " : " + price.getPrice());
+						shortcutLabelList.add(priceLabel);
+						add(priceLabel);
+					}
+				}
+			  }
 		}
 		//JLabel parent = new JLabel(gui.getEngine().getMenu().getCurrentLevel().getDesc());
 		//add(parent);
+		JLabel key;
 		for(MenuItem item:levelMenuItem){
-			JLabel key = new JLabel(prefix+"\t└──"+item.getDesc() + " " + item.getKey());
-			shortcutLabelList.add(key);
-			add(key);
-			if(item.hasPrice() && !item.hasChild() ){
-				for(Price price:item.getPrice()){
-					JLabel priceLabel = new JLabel(prefix+"\t└── " + price.getDesc()+ " " + price.getKey() + " : " + price.getPrice());
-					shortcutLabelList.add(priceLabel);
-					add(priceLabel);
-				}
-			}
+		   if(prems==true)
+			key = new JLabel(prefix+"└── "+item.getDesc() + " " + item.getKey());
+		 else
+		 	 key = new JLabel(prefix+"\t└── "+item.getDesc() + " " + item.getKey());
+		shortcutLabelList.add(key);
+		add(key);
 		}
 		mgr.doLayout(this);
 	}
