@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<menu>
+	<menuItem>
+		<desc>Jus</desc>
+		<key>j</key>
+		<menuItem>
+			<desc>100%</desc>
+			<key>c</key>
+			<menuItem>
+				<desc>Pomme</desc>
+				<key>p</key>
+			</menuItem>
+			<menuItem>
+				<desc>Orange</desc>
+				<key>o</key>
+			</menuItem>
+			<priceDesc>
+				<category>
+					<desc>50 cL</desc>
+					<key>c</key>
+					<price>2.5</price>
+				</category>
+				<category>
+					<desc>33 cL</desc>
+					<key>t</key>
+					<price>1.5</price>
+				</category>
+			</priceDesc>
+		</menuItem>
+		<menuItem>
+			<desc>100% +</desc>
+			<key>p</key>
+			<menuItem>
+				<desc>Pomme</desc>
+				<key>p</key>
+			</menuItem>
+			<menuItem>
+				<desc>Orange</desc>
+				<key>o</key>
+			</menuItem>
+			<priceDesc>
+				<category>
+					<desc>50 cL</desc>
+					<key>c</key>
+					<price>3</price>
+				</category>
+				<category>
+					<desc>33 cL</desc>
+					<key>t</key>
+					<price>2</price>
+				</category>
+			</priceDesc>
+		</menuItem>
+		<menuItem>
+			<desc>Jus du Jour</desc>
+			<key>j</key>
+			<priceDesc>
+				<category>
+					<desc>50 cL</desc>
+					<key>c</key>
+					<price>4.5</price>
+				</category>
+				<category>
+					<desc>33 cL</desc>
+					<key>t</key>
+					<price>3</price>
+				</category>
+			</priceDesc>
+		</menuItem>
+		<menuItem>
+			<desc>Jus Perso</desc>
+			<key>o</key>
+			<priceDesc>
+				<category>
+					<desc>50 cL</desc>
+					<key>c</key>
+					<price>5.5</price>
+				</category>
+				<category>
+					<desc>33 cL</desc>
+					<key>t</key>
+					<price>3.5</price>
+				</category>
+			</priceDesc>
+		</menuItem>
+		<menuItem>
+			<desc>Citronnade</desc>
+			<key>n</key>
+			<priceDesc>
+				<category>
+					<desc>50 cL</desc>
+					<key>c</key>
+					<price>1.5</price>
+				</category>
+				<category>
+					<desc>33 cL</desc>
+					<key>t</key>
+					<price>1.5</price>
+				</category>
+			</priceDesc>
+		</menuItem>
+		<menuItem>
+			<desc>Thé glacé</desc>
+			<key>t</key>
+			<priceDesc>
+				<category>
+					<desc>50 cL</desc>
+					<key>c</key>
+					<price>1.5</price>
+				</category>
+				<category>
+					<desc>33 cL</desc>
+					<key>t</key>
+					<price>1.5</price>
+				</category>
+			</priceDesc>
+		</menuItem>
+	</menuItem>
+	<menuItem>
+		<priceDesc>
+			<category>
+				<desc>Grande</desc>
+				<key>g</key>
+				<price>5</price>
+			</category>
+			<category>
+				<desc>Petite</desc>
+				<key>p</key>
+				<price>3</price>
+			</category>
+		</priceDesc>
+		<desc>Salade</desc>
+		<key>s</key>
+	</menuItem>
+	<menuItem>
+		<priceDesc>
+			<category>
+				<desc>Grand</desc>
+				<key>g</key>
+				<price>4</price>
+			</category>
+			<category>
+				<desc>Petit</desc>
+				<key>p</key>
+				<price>2.5</price>
+			</category>
+		</priceDesc>
+		<desc>Dessert</desc>
+		<key>d</key>
+	</menuItem>
+	<menuItem>
+		<priceDesc>
+			<category>
+				<desc>Normal</desc>
+				<key>n</key>
+				<price>1</price>
+			</category>
+			<category>
+				<desc>Petit/Raté (2)</desc>
+				<key>p</key>
+				<price>1</price>
+			</category>
+		</priceDesc>
+		<desc>Cookie</desc>
+		<key>c</key>
+	</menuItem>
+</menu>
