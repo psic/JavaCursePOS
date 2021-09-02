@@ -44,20 +44,6 @@ public class Engine  {
                 }
             });
         	 
-        	 
-//         	 this.gui.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "validatecommad");
-//             this.gui.getActionMap().put("validatecommad", new validateCommandAction());
-//         	 
-// //         	 gui,getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ESC, 0), "resetcommad");
-// //             gui.getActionMap().put("resetcommad", new resetCommandAction());
-//         	 
-//             this.gui.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(':'), "begincommad");
-//             this.gui.getActionMap().put("begincommad", new beginCommandAction());
-//             
-//              for (int i=0; i<shortcut.length;i++){
-//                 this.gui.getInputMap(javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(shortcut[i]), "handlekey");
-//                 this.gui.getActionMap().put("handlekey", new interpretAction(this.interpret));
-//             }
         }
 
      void this_keyPressed(KeyEvent e) {
@@ -85,9 +71,6 @@ public class Engine  {
 	    engine.gui.setVisible(true);
     }
 
-// 	public boolean handleKey(char c) throws CommandException {
-// // 		return interpret.handleKey(c);
-// 	}
 
 	public void refreshCurrentLevel() {
 		gui.refreshCurrentLevel();
@@ -100,7 +83,6 @@ public class Engine  {
 	
 	public void validateCommand(int number){
         Order current_order = new Order(getMenu().getCurrentLevel().getFullDesc() ,getMenu().getCurrentLevel().getSelectedPrice() , number);
-//         Order current_order = new Order(getMenu().getCurrentLevel().getDesc() ,4 , number);
         customer.addOrder(current_order);
         gui.addOrder(current_order);
 
@@ -109,45 +91,6 @@ public class Engine  {
 	public CurrentCustomer getCurrentCustomer(){
         return customer;
 	}
-	
-// 	private class interpretAction extends AbstractAction {
-//         
-//         private CommandInterpreter interpret;
-//         
-//         interpretAction(CommandInterpreter interpret_){
-//             interpret = interpret_;
-//         }
-// 	
-//         @Override
-//         public void actionPerformed(ActionEvent e) {
-//             interpret.handleKey(e.getActionCommand());
-//         }
-//     }
-//     
-//     private class beginCommandAction extends AbstractAction {
-//                
-//         beginCommandAction(){
-// 
-//         }
-// 	
-//         @Override
-//         public void actionPerformed(ActionEvent e) {
-//                 return;        
-//         }
-//     }
-//     
-//     private class validateCommandAction extends AbstractAction {
-//                
-//         validateCommandAction(){
-// 
-//         }
-// 	
-//         @Override
-//         public void actionPerformed(ActionEvent e) {
-//                 return;        
-//         }
-//     }
-	
 	
 
 }
