@@ -10,6 +10,8 @@ import charvax.swing.JFrame;
 import charvax.swing.JPanel;
 import charvax.swing.JTextField;
 import fr.web_en_royans.lebarajus.POS.Engine;
+import fr.web_en_royans.lebarajus.POS.CommandInterpreter;
+import fr.web_en_royans.lebarajus.POS.Order;
 
 public class GUIManager extends JFrame {
 	private int largeur;
@@ -30,6 +32,13 @@ public class GUIManager extends JFrame {
 	//	this.command.printCommand(command);
 	
 	}
+	
+	public void printError(String error){
+        command.handleError(error);
+	}
+	public void appendToCurrentCommand(char c){
+        command.addChar(c);
+	}
 
 	JPanel contentPane;
 	
@@ -49,11 +58,12 @@ public class GUIManager extends JFrame {
         current = new CurrentCustomerGUI(this, (largeur_3*2)-3, hauteur_2);
         daily = new DailyListGUI(this, largeur_3+1, hauteur-2,(largeur_3*2)-3);  
         contentPane = (JPanel) this.getContentPane();    
-        contentPane.setLayout(null);  
+        contentPane.setLayout(null); 
         
         
         
        // validate();
+//        requestFocus();
         setSize(largeur,hauteur);
         adjustLocation();
         doLayout();
@@ -64,6 +74,15 @@ public class GUIManager extends JFrame {
 
     }
 
+    public void addOrder(Order order)
+    {
+        current.addOrder(order);
+    }
+    
+    public void startOrder(){
+        command.changeState("On going Order");
+    }
+    
     public void terminate() {
         System.exit(0);
     }

@@ -17,7 +17,9 @@ public class CommandInterpreter {
 		getAllowedShortcut();
 	}
 
-    public boolean handleKey(char c) throws CommandException{
+    public boolean handleKey(KeyEvent e) throws CommandException{
+        char c= (char)e.getKeyCode();
+
 		//ErrorMessage(String.valueOf(c));
 		if (isOnGoingCommand){
 			boolean found=false;
@@ -25,20 +27,36 @@ public class CommandInterpreter {
 				if (nextShortcutList[i] == c)
 					found = true;
 			}
+			if (isEndingCommand){
+                if (e.getKeyCode() == KeyEvent.VK_ENTER){
+                    engine.validateCommand(1);
+                    return true;
+// 				   arg0.consume();
+                }   
+			if(Character.isDigit(c)){
+                    engine.validateCommand(Character.getNumericValue(c));
+                    return true;
+                }
+//                 else
+//                     throw new CommandException("Order is Over");
+            }
 			if (found == false){
-				throw new CommandException("Bad Command");
+				throw new CommandException(c + " : Bad Command");
 
 			}
 			else{
 				if(! isShortcutCommand(c)){
+                    engine.appendToCurrentCommand(c);
 					engine.getMenu().nextLevel(c);
 					getAllowedShortcut();
 				}
 			}
 		}
 		else{
-			if(commandbeginner == c)
+			if(commandbeginner == c){
+				engine.startOrder();
 				isOnGoingCommand = true;
+				}
 			else{
 				throw new CommandException(commandbeginner + "to begin a new command");
 			}
@@ -57,7 +75,16 @@ public class CommandInterpreter {
 					}
 	}
 
-	private void getAllowedShortcut() {
+	
+	public boolean isOrderOver(){
+        return isEndingCommand;
+	}
+	
+	public boolean isOnGoingCommand(){
+        return isOnGoingCommand;
+	}
+	
+	public char[] getAllowedShortcut() {
 		nextShortcutList = commandShortcutList;
 	if (engine.getMenu().getCurrentLevel().hasChild()){
 			 char[] shortcutlevellist= engine.getMenu().getCurrentLevel().getChildrenKeys();
@@ -70,6 +97,7 @@ public class CommandInterpreter {
 					isEndingCommand = true;
 				}
 		}
+    return nextShortcutList;
 			/** nextShortcutList = new char[shortcutlevellist.length + commandShortcutList.length ];
 			 int i=0;
 		/**	for (; i<commandShortcutList.length;i++){
@@ -78,7 +106,7 @@ public class CommandInterpreter {
 			 //i++;
 			 for (int j=0;j<shortcutlevellist.length;j++){
 				 nextShortcutList[i+j]=shortcutlevellist[j];
-			 }**/
+			 }  **/
 		 //print allowed shortculist to command
 		 //error.setText(new String (nextShortcutList));
 	}

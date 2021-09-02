@@ -22,9 +22,10 @@ public class CommandGUI extends JPanel{
 	private int hauteur;
 	private int largeur;
 	private JButton cancelButton = new JButton();
-	private JTextArea command = new JTextArea();
+	private JLabel command = new JLabel();
 	private JLabel error = new JLabel();
-
+	private JLabel state = new JLabel(": to begin an order");
+    private JLabel sep = new JLabel(" || ");
 	public CommandGUI(GUIManager gui_, int largeur_,int hauteur_) {
 		super();
 		gui = gui_;
@@ -35,53 +36,70 @@ public class CommandGUI extends JPanel{
         setForeground(Color.white);
         setBackground(Color.blue);
         setLocation(0,hauteur-3);
-        command.setRows(1);
-        command.setColumns(15);
-        add(command);
-
-        command.addKeyListener(new KeyListener() {
-			@Override
-			public void keyPressed(KeyEvent arg0) {
-				if (arg0.getKeyCode() == KeyEvent.VK_ENTER){
-				  gui.getEngine().validateCommand();
-
-				   arg0.consume();
-				}
-				else{
-				   		if (arg0.getKeyCode() == KeyEvent.VK_DELETE){
-
-
-				   		}
-				   		else{
-								if(!(handleKey((char)arg0.getKeyCode())))
-										arg0.consume();
-				   		}
-				}
-			}
-
-			@Override
-			public void keyReleased(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void keyTyped(KeyEvent arg0) {
-				// TODO Auto-generated method stub
-
-			}
-
-        });
-
+//         command.setRows(1);
+//         command.setColumns(15);
         add(cancelButton, null);
+        
+        state.setLength(20);
+        add(state);
+        add(sep);
+        
+        command.setLength(10);
+        add(command);
+        
+        
+
+//         command.addKeyListener(new KeyListener() {
+// 			@Override
+// 			public void keyPressed(KeyEvent arg0) {
+// 				if (arg0.getKeyCode() == KeyEvent.VK_ENTER){
+// 				  gui.getEngine().validateCommand(1);
+// 
+// 				   arg0.consume();
+// 				}
+// 				else{
+// 				   		if (arg0.getKeyCode() == KeyEvent.VK_DELETE){
+// 
+// 
+// 				   		}
+// 				   		else{
+// 								if(!(handleKey((char)arg0.getKeyCode())))
+// 										arg0.consume();
+// 				   		}
+// 				}
+// 			}
+// 
+// 			@Override
+// 			public void keyReleased(KeyEvent arg0) {
+// 				// TODO Auto-generated method stub
+// 
+// 			}
+// 
+// 			@Override
+// 			public void keyTyped(KeyEvent arg0) {
+// 				// TODO Auto-generated method stub
+// 
+// 			}
+// 
+//         });
+
+        
         setSize(largeur,1);
         //setSize(1,10);
+//         cancelButton.setText("Prout");
+//         cancelButton.addActionListener(new charva.awt.event.ActionListener() {
+//             public void actionPerformed(ActionEvent e) {
+//                 cancelButton_actionPerformed(e);
+//             }
+//         });
+
         cancelButton.setText("Prout");
         cancelButton.addActionListener(new charva.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 cancelButton_actionPerformed(e);
             }
         });
+
         add(error);
         setLayout(mgr);
         mgr.doLayout(this);
@@ -95,18 +113,28 @@ public class CommandGUI extends JPanel{
 	}
 
 	void cancelButton_actionPerformed(ActionEvent e) {
-        gui.terminate();
+//         gui.terminate();
+        state.setText("Validation!");
+        gui.getEngine().validateCommand(1);
     }
 
-	private boolean handleKey(char c){
-		try {
-			return gui.getEngine().handleKey(c);
-		} catch (CommandException e) {
-			return handleError(e.getError());
-		}
-	}
-
-	private boolean handleError(String errormsg) {
+// 	private boolean handleKey(char c){
+// 		try {
+// 			return gui.getEngine().handleKey(c);
+// 		} catch (CommandException e) {
+// 			return handleError(e.getError());
+// 		}
+// 	}
+    public void addChar(char c){
+        command.setText(command.getText() +c);
+    }
+    
+    public void changeState(String stateStr)
+    {
+        state.setText(stateStr);
+    }
+    
+	public boolean handleError(String errormsg) {
 		error.setText(errormsg);
 		return false;
 	//int caret = command.getCaretPosition();

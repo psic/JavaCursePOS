@@ -9,9 +9,12 @@ import charvax.swing.JLabel;
 public class MenuItem  {
 	
 	private List<Price> price;
+	private Price selectedPrice;
 	private String desc;
+	private String fullDesc;
+	private String sep = " / ";
 	private char key;
-	
+	private boolean isRoot;
 	private MenuItem parent;
     private List<MenuItem> children;
 	
@@ -19,6 +22,11 @@ public class MenuItem  {
 	   price = price_;
 	   desc = desc_;
 	   key = key_;
+	   isRoot=false;
+	   if (!parent_.isRoot())
+            fullDesc = parent_.getFullDesc() + sep + desc;
+        else 
+            fullDesc = desc;
 	   setParent(parent_);
        children = new ArrayList<MenuItem>();
 	   
@@ -26,10 +34,14 @@ public class MenuItem  {
     
 	public MenuItem() {
 		parent = null;
+		isRoot=true;
 		 children = new ArrayList<MenuItem>();
 		 price = new ArrayList<Price>();
 }
-
+    public boolean isRoot(){return isRoot;}
+    public String getFullDesc(){
+        return fullDesc;
+    }
 	/**
 	 * @return the price
 	 */
@@ -125,10 +137,10 @@ public class MenuItem  {
 		 		for (Price oneprice : price){
 		 			prices += "/  " + oneprice.getDesc() + " (" + oneprice.getKey() + ") :" + oneprice.getPrice() ; 
 		 		}
-		        System.out.println(prefix + (isTail ? "└── " : "├── ") + desc + " " + key +  prices);
+		        System.out.println(prefix + (isTail ? "└── " : "├── ") + desc + " " + key +  prices + " -- " + fullDesc);
 		 	}
 		 	else{
-		        System.out.println(prefix + (isTail ? "└── " : "├── ") + desc + " " + key );
+		        System.out.println(prefix + (isTail ? "└── " : "├── ") + desc + " " + key + " -- " + fullDesc);
 		 	}
 		 
 	        for (int i = 0; i < children.size() - 1; i++) {
@@ -156,6 +168,19 @@ public class MenuItem  {
 			return keys;
 		}
 		return null;	
+	}
+	
+	public void selectPrice(char c)
+	{
+        for(Price priceItem : price)
+        {
+            if (priceItem.getKey() == c)
+                selectedPrice = priceItem;
+        }
+	}
+	
+	public Price getSelectedPrice(){
+        return selectedPrice;
 	}
 
 }

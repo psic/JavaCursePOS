@@ -27,7 +27,7 @@ public class Menu {
 	      {
 	         //On crée un nouveau document JDOM avec en argument le fichier XML
 	         //Le parsing est terminé ;)
-	         document = sxb.build(new File("/home/psic/workspace/javacursesPOS/menu.xml"));
+	         document = sxb.build(new File("/home/jerome/workspace/javacursesPOS/menu.xml"));
 	      }
 	      catch(Exception e){throw new MenuParserException(e);}
 	    //On initialise un nouvel élément racine avec l'élément racine du document.
@@ -165,7 +165,12 @@ public class Menu {
 				}		
 		    }
 		}//else
-		//	engine.refreshCurrentLevel();		
+		//	engine.refreshCurrentLevel();	
+		else{
+            if(engine.getMenu().getCurrentLevel().hasPrice()){
+                currentLevel.selectPrice(c);
+            }
+        }
 	}
 	
 	public void print() {
