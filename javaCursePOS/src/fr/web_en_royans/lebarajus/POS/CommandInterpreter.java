@@ -27,7 +27,7 @@ public class CommandInterpreter {
 				if (nextShortcutList[i] == c)
 					found = true;
 			}
-			if (isEndingCommand){
+// 			if (isEndingCommand){
                 if (e.getKeyCode() == KeyEvent.VK_ENTER){
                     engine.validateCommand(1);
                     return true;
@@ -39,8 +39,8 @@ public class CommandInterpreter {
                 }
 //                 else
 //                     throw new CommandException("Order is Over");
-            throw new CommandException("Order is Over. Hit Enter to Validate or add quantity");
-            }
+//             throw new CommandException("Order is Over. Hit Enter to Validate or add quantity");
+//             }
             
 			if (found == false){
 				throw new CommandException(c + " : Bad Command");
@@ -55,8 +55,10 @@ public class CommandInterpreter {
 			}
 		}
 		else{
-            if (e.getKeyCode() == KeyEvent.VK_ENTER){
-            
+//             if (e.getKeyCode() == KeyEvent.VK_ENTER){
+            if(c == 'a'){
+                engine.addCurrentToDaily();
+                return true;
             }
 		
 			if(commandbeginner == c){
@@ -107,7 +109,7 @@ public class CommandInterpreter {
 				if(engine.getMenu().getCurrentLevel().hasPrice()){
 					char[] shortcutprice = engine.getMenu().getCurrentLevel().getPriceKeys();
 					nextShortcutList = ArrayUtils.addAll(nextShortcutList, shortcutprice);
-					isEndingCommand = true;
+// 					isEndingCommand = true;
 				}
 		}
     return nextShortcutList;

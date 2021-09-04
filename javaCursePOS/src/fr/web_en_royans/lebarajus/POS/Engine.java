@@ -7,6 +7,7 @@ import fr.web_en_royans.lebarajus.POS.menu.MenuParserException;
 import charvax.swing.AbstractAction;
 import charva.awt.event.ActionEvent;
 import charvax.swing.JComponent;
+import java.util.ArrayList;
 // import charvax.swing.KeyStroke;
 import javax.swing.KeyStroke;
 
@@ -23,6 +24,7 @@ public class Engine  {
 	private GUIManager gui;
 	private CommandInterpreter interpret;
 	private CurrentCustomer customer;
+	private DailyList daily;
 
 
 
@@ -34,8 +36,10 @@ public class Engine  {
 				e.printStackTrace();
 			}
              this.customer=new CurrentCustomer();
+             this.daily = new DailyList();
         	 this.gui = new GUIManager(this);
         	 this.interpret=new CommandInterpreter (this);
+
 //         	 char[] shortcut = interpret.getAllowedShortcut();
         	 
              this.gui.addKeyListener(new charva.awt.event.KeyAdapter() {
@@ -89,12 +93,20 @@ public class Engine  {
         menu.reset();
         interpret.clean();
         gui.clean();
+	}
 
-
+	public void addCurrentToDaily()
+	{
+//         gui.addToDaily();
+        daily.addOrders(customer.getOrders());
 	}
 	
 	public CurrentCustomer getCurrentCustomer(){
         return customer;
+	}
+	
+	public DailyList getDaily(){
+        return daily;
 	}
 	
 

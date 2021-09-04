@@ -18,7 +18,7 @@ import fr.web_en_royans.lebarajus.POS.Order;
 
 public class CurrentCustomerGUI extends JPanel{
 	private GUIManager gui;
-	private BoxLayout mgr;
+	private BorderLayout mgr;
 	private int hauteur;
 	private int largeur;
 	JLabel titre = new JLabel("Le Client!");
@@ -29,8 +29,8 @@ public class CurrentCustomerGUI extends JPanel{
 		  this.hauteur = hauteur_;
 		  this.largeur = largeur_;
 // 	      mgr = new FlowLayout();
-         mgr = new BoxLayout(this,BoxLayout.Y_AXIS);
-//           mgr = new BorderLayout();
+//          mgr = new BoxLayout(this,BoxLayout.Y_AXIS);
+          mgr = new BorderLayout();
 		  setForeground(Color.red);
 	      setBackground(Color.yellow);
 	      
@@ -52,7 +52,7 @@ public class CurrentCustomerGUI extends JPanel{
 //              add(scroll,BorderLayout.CENTER);
              add (total,BorderLayout.SOUTH);
 //             add(scroll);
-             add (total);
+//              add (total);
 //             add(new JScrollPane(tableau));//, BorderLayout.CENTER);
 //             add(tableau);
             

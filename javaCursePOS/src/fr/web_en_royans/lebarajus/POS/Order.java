@@ -49,4 +49,8 @@ public class Order {
     public String getTotal(){
         return Float.toString (price.getPrice() * number);
     }
+    
+    public Float getTotalAsFloat(){
+        return price.getPrice() * number;
+    }
 }

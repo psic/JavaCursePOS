@@ -88,6 +88,10 @@ public class GUIManager extends JFrame {
         command.changeState("On going Order");
     }
     
+    public void addToDaily(){
+        command.changeState("Add To Daily");
+    }
+    
     public void terminate() {
         System.exit(0);
     }

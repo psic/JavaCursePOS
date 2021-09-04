@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import charvax.swing.table.AbstractTableModel;
 
 public class CurrentCustomer extends AbstractTableModel {
-   private List<Order> orders;
+   private ArrayList<Order> orders;
    private float total=0;
    private final String[] entetes = {"                  Article                   ", "   Prix Lib    ", "    Prix    ", "Qté", "    Total  "};
  
@@ -56,6 +56,10 @@ public class CurrentCustomer extends AbstractTableModel {
             default:
                 return null; //Ne devrait jamais arriver
         }
+    }
+    
+    public ArrayList<Order> getOrders(){
+        return orders;
     }
  
 //     public void addAmi(Ami ami) {
