@@ -6,7 +6,7 @@ import charvax.swing.table.AbstractTableModel;
 
 public class CurrentCustomer extends AbstractTableModel {
    private List<Order> orders;
-   
+   private float total=0;
    private final String[] entetes = {"                  Article                   ", "   Prix Lib    ", "    Prix    ", "Qté", "    Total  "};
  
   
@@ -20,7 +20,13 @@ public class CurrentCustomer extends AbstractTableModel {
    
    public void addOrder(Order order){
     orders.add(order);
+    total += order.getPriceAsFloat();
     fireTableRowsInserted(orders.size() -1, orders.size() -1);
+   }
+   
+   public float getTotal()
+   {
+        return total;
    }
    
    public int getRowCount() {

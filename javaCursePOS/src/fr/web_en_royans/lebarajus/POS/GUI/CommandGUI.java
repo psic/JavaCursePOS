@@ -134,6 +134,11 @@ public class CommandGUI extends JPanel{
         state.setText(stateStr);
     }
     
+    public void clean(){
+        state.setText(": to begin an order");
+        command.setText("");
+    }
+    
 	public boolean handleError(String errormsg) {
 		error.setText(errormsg);
 		return false;

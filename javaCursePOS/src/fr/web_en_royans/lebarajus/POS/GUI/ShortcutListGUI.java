@@ -10,7 +10,9 @@ import charvax.swing.BoxLayout;
 import charvax.swing.JLabel;
 import charvax.swing.JPanel;
 import charvax.swing.JTextField;
-
+import charvax.swing.BorderFactory;
+import charvax.swing.border.TitledBorder;
+import charvax.swing.border.LineBorder;
 import fr.web_en_royans.lebarajus.POS.menu.MenuItem;
 import fr.web_en_royans.lebarajus.POS.menu.Price;
 
@@ -35,7 +37,11 @@ public class ShortcutListGUI extends JPanel{
         setLocation(0,hauteur+1);
         setForeground(Color.black);
         setBackground(Color.white);
-
+        TitledBorder border= new TitledBorder(BorderFactory.createTitledBorder("Menu Shortcut"));
+//             border.setTitleJustification(TitledBorder.LEFT_ALIGNMENT);
+//     border.setTitlePosition(TitledBorder.TOP_ALIGNMENT);    
+    setBorder(border);
+    
         init();
        for(JLabel key:shortcutLabelList){
 			add(key);
@@ -126,6 +132,23 @@ public class ShortcutListGUI extends JPanel{
 
 	private void refreshGUI(){
 
+	}
+	
+	public void reset(){
+        shortcutLabelList = new ArrayList<JLabel>();
+        Component[] comp = getComponents();
+		//for (int i =0; i<=getComponentCount(); i++){
+		for(int i =0;i<comp.length;i++){
+			remove(comp[i]);
+		}
+
+		add(titre);
+        init();
+        for(JLabel key:shortcutLabelList){
+			add(key);
+		}
+		mgr.doLayout(this);
+//         refreshList();
 	}
 
 }

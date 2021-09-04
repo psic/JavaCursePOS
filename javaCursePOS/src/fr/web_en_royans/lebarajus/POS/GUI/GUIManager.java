@@ -79,6 +79,11 @@ public class GUIManager extends JFrame {
         current.addOrder(order);
     }
     
+    public void setTotalCurrentCustomer(float total)
+    {
+        current.setTotal(Float.toString(total));
+    }
+    
     public void startOrder(){
         command.changeState("On going Order");
     }
@@ -90,5 +95,10 @@ public class GUIManager extends JFrame {
 	public void refreshCurrentLevel() {
 		keys.refresh();
 		
+	}
+	
+	public void clean(){
+        command.clean();
+        keys.reset();
 	}
 }

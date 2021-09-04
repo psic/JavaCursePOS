@@ -154,6 +154,10 @@ public class Menu {
 		return currentLevel;
 	}
 
+	public void reset(){
+        currentLevel = menu;
+	}
+	
 	public void nextLevel(char c) {
 		if(currentLevel.hasChild()){
 			List<MenuItem> currentChild = currentLevel.getChildren();

@@ -38,6 +38,10 @@ public class Order {
         return Float.toString(price.getPrice());
     }
     
+    public float getPriceAsFloat(){
+        return price.getPrice();
+    }
+    
     public String getNumber(){
         return Integer.toString(number);
     }

@@ -3,7 +3,7 @@ package fr.web_en_royans.lebarajus.POS.GUI;
 import charva.awt.Color;
 import charva.awt.FlowLayout;
 import charvax.swing.BoxLayout;
-// import charvax.swing.BorderLayout;
+import charva.awt.BorderLayout;
 import charvax.swing.JPanel;
 import charvax.swing.JLabel;
 import charvax.swing.JTextArea;
@@ -18,36 +18,41 @@ import fr.web_en_royans.lebarajus.POS.Order;
 
 public class CurrentCustomerGUI extends JPanel{
 	private GUIManager gui;
-	private FlowLayout mgr;
+	private BoxLayout mgr;
 	private int hauteur;
 	private int largeur;
 	JLabel titre = new JLabel("Le Client!");
+	JLabel total = new JLabel("0.0");
 	public CurrentCustomerGUI(GUIManager gui_, int largeur_, int hauteur_) {
 		  super();
 		  gui = gui_;
 		  this.hauteur = hauteur_;
 		  this.largeur = largeur_;
 // 	      mgr = new FlowLayout();
-//          mgr = new BoxLayout(this,BoxLayout.Y_AXIS);
-
+         mgr = new BoxLayout(this,BoxLayout.Y_AXIS);
+//           mgr = new BorderLayout();
 		  setForeground(Color.red);
 	      setBackground(Color.yellow);
 	      
 //         TitledBorder border = new TitledBorder("Le Client");//(new LineBorder(Color.red),"Le Client!",0, 0,null, Color.red);
-//         TitledBorder border= new TitledBorder(BorderFactory.createLineBorder(new Color(153, 153, 153),2),"New User");
+        TitledBorder border= new TitledBorder(BorderFactory.createLineBorder(Color.green,1),"CurrentCustomer");
 // //             border.setTitleJustification(TitledBorder.LEFT_ALIGNMENT);
 //             border.setTitlePosition(TitledBorder.TOP_ALIGNMENT);
 
             
-//             setBorder(border);
+            setBorder(border);
 
             JTable tableau = new JTable(gui.getEngine().getCurrentCustomer());
-            tableau.setPreferredScrollableViewportSize(new Dimension(largeur, hauteur));
+//             tableau.setPreferredScrollableViewportSize(new Dimension(largeur, hauteur));
+            add(tableau,BorderLayout.CENTER);
 //             tableau.setBounds(new Point(0,0),new Dimension(90, 50));
 //             tableau.setFillsViewportHeight(true);
-            JScrollPane scroll =new JScrollPane(tableau);
-             scroll.setSize(largeur, hauteur);
-             add(scroll);
+//             JScrollPane scroll =new JScrollPane(tableau);
+//              scroll.setSize(largeur, hauteur);
+//              add(scroll,BorderLayout.CENTER);
+             add (total,BorderLayout.SOUTH);
+//             add(scroll);
+             add (total);
 //             add(new JScrollPane(tableau));//, BorderLayout.CENTER);
 //             add(tableau);
             
@@ -72,9 +77,14 @@ public class CurrentCustomerGUI extends JPanel{
 	      
 	      setSize(largeur, hauteur);
 	      setLocation(0,0);
-// 	      setLayout(mgr);
+	      setLayout(mgr);
 // pack();
+          mgr.doLayout(this);
 	      gui.getContentPane().add(this);
+	}
+	
+	public void setTotal(String total_){
+        total.setText(total_);
 	}
 	
 	public void  addOrder(Order order){

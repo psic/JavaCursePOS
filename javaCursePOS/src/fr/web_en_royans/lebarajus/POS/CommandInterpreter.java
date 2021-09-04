@@ -39,7 +39,9 @@ public class CommandInterpreter {
                 }
 //                 else
 //                     throw new CommandException("Order is Over");
+            throw new CommandException("Order is Over. Hit Enter to Validate or add quantity");
             }
+            
 			if (found == false){
 				throw new CommandException(c + " : Bad Command");
 
@@ -53,6 +55,10 @@ public class CommandInterpreter {
 			}
 		}
 		else{
+            if (e.getKeyCode() == KeyEvent.VK_ENTER){
+            
+            }
+		
 			if(commandbeginner == c){
 				engine.startOrder();
 				isOnGoingCommand = true;
@@ -82,6 +88,13 @@ public class CommandInterpreter {
 	
 	public boolean isOnGoingCommand(){
         return isOnGoingCommand;
+	}
+	
+	public void clean(){
+        isOnGoingCommand =false;
+        isEndingCommand = false;
+        commandShortcutList = new char[]{'e','q'};
+        getAllowedShortcut();
 	}
 	
 	public char[] getAllowedShortcut() {

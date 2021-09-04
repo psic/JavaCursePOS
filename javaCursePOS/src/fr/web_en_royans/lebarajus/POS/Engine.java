@@ -36,7 +36,7 @@ public class Engine  {
              this.customer=new CurrentCustomer();
         	 this.gui = new GUIManager(this);
         	 this.interpret=new CommandInterpreter (this);
-        	 char[] shortcut = interpret.getAllowedShortcut();
+//         	 char[] shortcut = interpret.getAllowedShortcut();
         	 
              this.gui.addKeyListener(new charva.awt.event.KeyAdapter() {
                 public void keyPressed(KeyEvent e) {
@@ -84,7 +84,12 @@ public class Engine  {
 	public void validateCommand(int number){
         Order current_order = new Order(getMenu().getCurrentLevel().getFullDesc() ,getMenu().getCurrentLevel().getSelectedPrice() , number);
         customer.addOrder(current_order);
-        gui.addOrder(current_order);
+//         gui.addOrder(current_order);
+        gui.setTotalCurrentCustomer(customer.getTotal());
+        menu.reset();
+        interpret.clean();
+        gui.clean();
+
 
 	}
 	
