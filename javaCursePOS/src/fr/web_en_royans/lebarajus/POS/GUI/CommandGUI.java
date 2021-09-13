@@ -38,7 +38,7 @@ public class CommandGUI extends JPanel{
         setLocation(0,hauteur-3);
 //         command.setRows(1);
 //         command.setColumns(15);
-        add(cancelButton, null);
+//         add(cancelButton, null);
         
         state.setLength(20);
         add(state);
@@ -93,12 +93,12 @@ public class CommandGUI extends JPanel{
 //             }
 //         });
 
-        cancelButton.setText("Prout");
-        cancelButton.addActionListener(new charva.awt.event.ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                cancelButton_actionPerformed(e);
-            }
-        });
+//         cancelButton.setText("Prout");
+//         cancelButton.addActionListener(new charva.awt.event.ActionListener() {
+//             public void actionPerformed(ActionEvent e) {
+//                 cancelButton_actionPerformed(e);
+//             }
+//         });
 
         add(error);
         setLayout(mgr);

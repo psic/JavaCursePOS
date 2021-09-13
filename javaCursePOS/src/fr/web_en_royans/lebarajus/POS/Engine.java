@@ -8,6 +8,7 @@ import charvax.swing.AbstractAction;
 import charva.awt.event.ActionEvent;
 import charvax.swing.JComponent;
 import java.util.ArrayList;
+
 // import charvax.swing.KeyStroke;
 import javax.swing.KeyStroke;
 
@@ -53,6 +54,13 @@ public class Engine  {
      void this_keyPressed(KeyEvent e) {
         
    		try {
+            gui.changeState(Integer.toString(e.getKeyCode()));
+            if (e.getKeyCode() == KeyEvent.VK_ENTER){
+//                     engine.validateCommand(1);
+                    gui.changeState("Validation!");
+                    return;
+            }
+            
 			interpret.handleKey(e);
 		} catch (CommandException ex) {
 			this.gui.printError(ex.getError());
@@ -98,7 +106,12 @@ public class Engine  {
 	public void addCurrentToDaily()
 	{
 //         gui.addToDaily();
-        daily.addOrders(customer.getOrders());
+        daily.addOrders(new ArrayList<Order> (customer.getOrders()));
+        customer.reset();
+        gui.setTotalDaily(daily.getTotal());
+        menu.reset();
+        interpret.clean();
+        gui.clean();
 	}
 	
 	public CurrentCustomer getCurrentCustomer(){
@@ -107,6 +120,10 @@ public class Engine  {
 	
 	public DailyList getDaily(){
         return daily;
+	}
+	
+	public void yesNoQuestion(){
+        gui.changeState("Add current customer to Daily ? Y/N");
 	}
 	
 

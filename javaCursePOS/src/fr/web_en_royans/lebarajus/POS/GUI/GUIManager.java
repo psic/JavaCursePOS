@@ -84,6 +84,10 @@ public class GUIManager extends JFrame {
         current.setTotal(Float.toString(total));
     }
     
+    public void setTotalDaily(float total){
+        daily.setTotal(Float.toString(total));
+    }
+    
     public void startOrder(){
         command.changeState("On going Order");
     }
@@ -104,5 +108,10 @@ public class GUIManager extends JFrame {
 	public void clean(){
         command.clean();
         keys.reset();
+	}
+	
+	public void changeState(String state)
+	{
+        command.changeState(state);
 	}
 }

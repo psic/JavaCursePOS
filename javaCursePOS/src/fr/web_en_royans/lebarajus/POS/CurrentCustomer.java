@@ -20,7 +20,7 @@ public class CurrentCustomer extends AbstractTableModel {
    
    public void addOrder(Order order){
     orders.add(order);
-    total += order.getPriceAsFloat();
+    total += order.getTotalAsFloat();
     fireTableRowsInserted(orders.size() -1, orders.size() -1);
    }
    
@@ -62,6 +62,11 @@ public class CurrentCustomer extends AbstractTableModel {
         return orders;
     }
  
+    public void reset(){
+        total = 0;
+        orders.clear();
+    
+    }
 //     public void addAmi(Ami ami) {
 //         amis.add(ami);
 //  

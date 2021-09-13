@@ -11,6 +11,8 @@ public class CommandInterpreter {
 	private static char commandbeginner =':';
 	private static char[] commandShortcutList = new char[]{'e','q'};
 	private boolean isEndingCommand = false;
+	private boolean yesNoQuestion = false;
+	private char lastChar ;
 
 	public CommandInterpreter(Engine engine_) {
 		engine = engine_;
@@ -21,6 +23,23 @@ public class CommandInterpreter {
         char c= (char)e.getKeyCode();
 
 		//ErrorMessage(String.valueOf(c));
+		if (yesNoQuestion)
+		{
+            if(c =='n')
+            {
+                yesNoQuestion = false;
+                return true;
+            }
+            if(c =='y')
+            {
+                if(lastChar == 'a'){
+                    yesNoQuestion = false;
+                    engine.addCurrentToDaily();
+                    return true;
+                }
+            }
+            throw new CommandException("Press y or n");
+		}
 		if (isOnGoingCommand){
 			boolean found=false;
 			for (int i=0; i<nextShortcutList.length;i++){
@@ -28,7 +47,7 @@ public class CommandInterpreter {
 					found = true;
 			}
 // 			if (isEndingCommand){
-                if (e.getKeyCode() == KeyEvent.VK_ENTER){
+                if (c == KeyEvent.VK_ENTER){
                     engine.validateCommand(1);
                     return true;
 // 				   arg0.consume();
@@ -57,7 +76,10 @@ public class CommandInterpreter {
 		else{
 //             if (e.getKeyCode() == KeyEvent.VK_ENTER){
             if(c == 'a'){
-                engine.addCurrentToDaily();
+                yesNoQuestion = true;
+                lastChar=c;
+                engine.yesNoQuestion();
+//                 engine.addCurrentToDaily();
                 return true;
             }
 		
